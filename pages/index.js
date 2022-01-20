@@ -8,31 +8,35 @@ export default function Home() {
                 <title>Cookie Stand Admin</title>
             </Head>
 
-            <Header/>
+            <Header />
 
-            <Main/>
+            <Main />
 
-            <Footer/>
- 
+            <Footer />
+
         </body>
 
     )
 }
 
 function Header() {
-    return(
-        <p>Header</p>
+    return (
+        <div className='bg-green-600 p-4'>
+            <h1 className='text-3xl font-bold'>Cookie Stand Admin</h1>
+        </div>
     )
 }
 
 function Main() {
-    return(
+    return (
         <p>Main</p>
     )
 }
 
 function Footer() {
-    return(
-        <p>Footer</p>
+    return (
+        <div className='bg-green-600 p-4'>
+            <p className='text-sm'>&#169;2021</p>
+        </div>
     )
 }

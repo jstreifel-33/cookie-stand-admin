@@ -70,19 +70,19 @@ function CreateForm(props) {
             </div>
 
             <div className='flex flex-row py-2'>
-                <div className='flex flex-col w-1/4 px-2 py-2'>
+                <div className='flex flex-col w-1/4 px-2 py-2 mx-1 bg-emerald-200 rounded'>
                     <label htmlFor="minCust" className='mx-auto'>Minimum Customers per Hour</label>
                     <input name="minCust" type='number' />
                 </div>
-                <div className='flex flex-col w-1/4 px-2 py-2'>
+                <div className='flex flex-col w-1/4 px-2 py-2 mx-1 bg-emerald-200 rounded'>
                     <label htmlFor="maxCust" className='mx-auto'>Maximum Customers per Hour</label>
                     <input name="maxCust" type='number' />
                 </div>
-                <div className='flex flex-col w-1/4 px-2 py-2'>
+                <div className='flex flex-col w-1/4 px-2 py-2 mx-1 bg-emerald-200 rounded'>
                     <label htmlFor="avgCookies" className='mx-auto'>Average Cookies per Sale</label>
                     <input name="avgCookies" type='number' />
                 </div>
-                <button className='bg-emerald-500 w-1/4 px-2 py-2'>Create</button>
+                <button className='bg-emerald-500 w-1/4 px-2 py-2 mx-1 rounded'>Create</button>
             </div>
 
         </form>

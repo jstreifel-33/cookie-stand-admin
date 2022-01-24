@@ -2,7 +2,7 @@
 
 Front-end interface for cookie stand administrative tools. An exploration in using Next.js and Tailwind CSS.
 
-## Next.js Boilerplate
+## Next.js Boilerplate for Reference
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

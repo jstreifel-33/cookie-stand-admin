@@ -3,6 +3,9 @@ import { useState } from 'react'
 import { hours } from './data'
 
 export default function Home() {
+
+    const [stores, updateStores] = useState([])
+
     return (
         <body className='bg-emerald-50'>
 
@@ -12,9 +15,9 @@ export default function Home() {
 
             <Header />
 
-            <Main />
+            <Main stores={stores} updateStores={updateStores}/>
 
-            <Footer />
+            <Footer stores={stores}/>
 
         </body>
 
@@ -29,17 +32,16 @@ function Header() {
     )
 }
 
-function Main() {
-    const [stores, updateStores] = useState([])
+function Main(props) {
 
     return (
         <main>
             <div className='m-auto bg-emerald-300 w-3/4 px-4 py-2 rounded-md'>
                 <h2 className='text-center text-2xl py-2'>Create Cookie Stand</h2>
-                <CreateForm stores={stores} updateStores={updateStores} />
+                <CreateForm stores={props.stores} updateStores={props.updateStores} />
             </div>
-            <div className='mx-auto text-center py-2'>
-                {stores.length ? <ReportTable stores={stores} /> : <p>No Cookie Stands Available</p>}
+            <div className='m-auto text-center py-2 flex justify-center'>
+                {props.stores.length ? <ReportTable stores={props.stores} /> : <p>No Cookie Stands Available</p>}
             </div>
         </main>
 
@@ -107,7 +109,7 @@ function ReportTable(props) {
     }
 
     return (
-        <table>
+        <table className='w-3/4'>
             <tr>
                 <th>Location</th>
                 {hours.map((hour, idx) => <th key={idx}>{hour}</th>)}
@@ -118,10 +120,10 @@ function ReportTable(props) {
     )
 }
 
-function Footer() {
+function Footer(props) {
     return (
         <footer className='bg-emerald-500 p-4'>
-            <p className='text-sm'>&#169;2021</p>
+            <p>{props.stores.length} Locations World Wide</p>
         </footer>
     )
 }

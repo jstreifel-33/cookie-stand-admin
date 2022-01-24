@@ -26,8 +26,9 @@ export default function Home() {
 
 function Header() {
     return (
-        <header className='bg-emerald-500 p-4 mb-8'>
+        <header className='bg-emerald-500 p-4 mb-8 flex justify-between items-center'>
             <h1 className='text-3xl font-bold'>Cookie Stand Admin</h1>
+            <button className='px-2 bg-gray-50 rounded'>Overview</button>
         </header>
     )
 }
@@ -41,7 +42,7 @@ function Main(props) {
                 <CreateForm stores={props.stores} updateStores={props.updateStores} />
             </div>
             <div className='m-auto text-center py-2 flex justify-center'>
-                {props.stores.length ? <ReportTable stores={props.stores} /> : <p>No Cookie Stands Available</p>}
+                {props.stores.length ? <ReportTable stores={props.stores} /> : <h2>No Cookie Stands Available</h2>}
             </div>
         </main>
 

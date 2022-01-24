@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { useState } from 'react'
+import {hours} from './data'
 
 export default function Home() {
     return (
@@ -28,7 +30,9 @@ function Header() {
 }
 
 function Main() {
-    let fakeJson = '{"location":"Barcelona","minCustomers":2,"maxCustomers":4,"avgCookies":2.5}'
+    const [stores, updateStores] = useState([])
+
+
     return (
         <main>
             <div className='m-auto bg-emerald-300 w-3/4 px-4 py-2 rounded-md'>
@@ -59,11 +63,36 @@ function Main() {
                 </form>
             </div>
             <div className='mx-auto text-center py-2'>
-                <p className='py-4'> Report Table Coming Soon...</p>
-                <p className='py-4'>{fakeJson}</p>
+                {stores.length ? <ReportTable stores={stores}/> : <p>No Cookie Stands Available</p>}
             </div>
         </main>
 
+    )
+}
+
+function ReportTable(props) {
+    
+    const hourlySales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
+
+    function renderStores(){
+        props.stores.map(store => {
+            <tr>
+                <td>{store.location}</td>
+                {hourlySales.map((sale, idx)=> <td key={idx}>{sale}</td>)}
+                <td>{store.total}</td>
+            </tr>
+        })
+    }
+
+    return (
+        <table>
+            <tr>
+                <th>Location</th>
+                {hours.map((hour, idx) => <th key={idx}>{hour}</th>)}
+                <th>Totals</th>
+            </tr>
+            {renderStores()}
+        </table>
     )
 }
 

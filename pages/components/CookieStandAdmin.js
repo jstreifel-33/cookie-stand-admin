@@ -1,21 +1,24 @@
-import { useState } from 'react'
 import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
+import useResource from '../../hooks/useResources'
 
-export default function CookieStandAdmin({stores, updateStores}) {
+export default function CookieStandAdmin() {
 
+    const { resources, deleteResource } = useResource()
+
+    const storeCount = resources ? resources.length : 0
 
     return (
-        <body className='bg-emerald-50'>
+        <div className='bg-emerald-50'>
 
             <Header />
 
-            <Main stores={stores} updateStores={updateStores} />
+            <Main stores={resources || []} deleteStand={deleteResource} />
 
-            <Footer stores={stores} />
+            <Footer storeCount={storeCount} />
 
-        </body>
+        </div>
 
     )
 }

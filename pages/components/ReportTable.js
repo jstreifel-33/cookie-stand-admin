@@ -5,8 +5,7 @@ export default function ReportTable(props) {
     const hourlySales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
 
     let totals = hours.map((hour, idx) => {
-        let currentTotal = props.stores.reduce((total, store) => total + store.hourlySales[idx], 0)
-        console.log(hour, currentTotal)
+        let currentTotal = props.stores.reduce((total, store) => total + store.hourly_sales[idx], 0)
         return currentTotal
     })
 
@@ -19,8 +18,8 @@ export default function ReportTable(props) {
                         : "bg-emerald-300"}>
 
                         <td className="border border-black">{store.location}</td>
-                        {hourlySales.map((sale, idx) => <td key={idx} className="border border-black">{sale}</td>)}
-                        <td className="border border-black">{hourlySales.reduce((a, b) => a + b)}</td>
+                        {store.hourly_sales.map((sale, idx) => <td key={idx} className="border border-black">{sale}</td>)}
+                        <td className="border border-black">{store.hourly_sales.reduce((a, b) => a + b)}</td>
                     </tr>
                 )
             })

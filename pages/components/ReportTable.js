@@ -13,7 +13,6 @@ export default function ReportTable(props) {
     })
 
     function handleDelete(store){
-        console.log(user)
         if (user.id == store.owner) {
             props.deleteStand(store.id)
         }else{

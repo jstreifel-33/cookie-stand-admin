@@ -4,7 +4,7 @@ export default function LoginForm({onLogin}) {
         onLogin(event.target.username.value, event.target.password.value)
     }
     return (
-        <div className="flex flex-col bg-emerald-200 border border-emerald-500 border-2 w-1/2 rounded mx-auto my-4">
+        <div className="flex flex-col bg-emerald-200 border-emerald-500 border-2 w-1/2 rounded mx-auto my-4">
             <form onSubmit={handleSubmit} className="flex flex-col justify-center text-center px-8">
 
                 <label htmlFor="username" className="my-1 font-bold">USER NAME</label>

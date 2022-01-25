@@ -5,7 +5,7 @@ export default function Main({stores, deleteStand}) {
 
     return (
         <main>
-            <div className='m-auto bg-emerald-300 w-3/4 px-4 py-2 rounded-md'>
+            <div className='m-auto bg-emerald-300 w-3/4 px-4 py-2 rounded-md border-2 border-emerald-500'>
                 <h2 className='text-center text-2xl py-2'>Create Cookie Stand</h2>
                 <CreateForm stores={stores} />
             </div>

@@ -1,27 +1,24 @@
 import Head from 'next/head'
 import { useState } from 'react'
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import { useAuth } from '../contexts/auth'
+import CookieStandAdmin from './components/CookieStandAdmin'
+import LoginForm from './components/LoginForm'
 
 export default function Home() {
 
     const [stores, updateStores] = useState([])
+    const {user, login} = useAuth()
 
     return (
-        <body className='bg-emerald-50'>
+        <div className='bg-emerald-50'>
 
             <Head>
                 <title>Cookie Stand Admin</title>
             </Head>
 
-            <Header />
+            {user ? <CookieStandAdmin /> : <LoginForm onLogin={login}/>}
 
-            <Main stores={stores} updateStores={updateStores} />
-
-            <Footer stores={stores} />
-
-        </body>
+        </div>
 
     )
 }

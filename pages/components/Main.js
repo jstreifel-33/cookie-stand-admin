@@ -10,7 +10,7 @@ export default function Main({stores, deleteStand}) {
                 <CreateForm stores={stores} />
             </div>
             <div className='m-auto text-center py-2 flex justify-center'>
-                {stores ? <ReportTable stores={stores} /> : <h2>No Cookie Stands Available</h2>}
+                {stores ? <ReportTable stores={stores} deleteStand={deleteStand}/> : <h2>No Cookie Stands Available</h2>}
             </div>
         </main>
 

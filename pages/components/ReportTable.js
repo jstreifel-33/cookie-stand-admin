@@ -1,13 +1,26 @@
 import { hours } from '../data'
+import { useAuth } from '../../contexts/auth'
 
 export default function ReportTable(props) {
 
     const hourlySales = [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36]
 
+    const { user } = useAuth()
+
     let totals = hours.map((hour, idx) => {
         let currentTotal = props.stores.reduce((total, store) => total + store.hourly_sales[idx], 0)
         return currentTotal
     })
+
+    function handleDelete(store){
+        console.log(user)
+        if (user.id == store.owner) {
+            props.deleteStand(store.id)
+        }else{
+            alert(`You do not have permission to delete ${store.location} store!`)
+        }
+
+    }
 
     function renderStores() {
         return (
@@ -17,7 +30,7 @@ export default function ReportTable(props) {
                         ? "bg-emerald-400"
                         : "bg-emerald-300"}>
 
-                        <td className="border border-black">{store.location}</td>
+                        <td className="border border-black">{store.location}<button onClick={() => handleDelete(store)}>[D]</button></td>
                         {store.hourly_sales.map((sale, idx) => <td key={idx} className="border border-black">{sale}</td>)}
                         <td className="border border-black">{store.hourly_sales.reduce((a, b) => a + b)}</td>
                     </tr>

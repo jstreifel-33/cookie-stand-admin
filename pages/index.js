@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import { useState } from 'react'
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import CookieStandAdmin from './components/CookieStandAdmin'
+import LoginForm from './components/LoginForm'
 
 export default function Home() {
 
     const [stores, updateStores] = useState([])
+    const [loggedIn, updateLoggedIn] = useState(false)
 
     return (
         <body className='bg-emerald-50'>
@@ -15,11 +15,7 @@ export default function Home() {
                 <title>Cookie Stand Admin</title>
             </Head>
 
-            <Header />
-
-            <Main stores={stores} updateStores={updateStores} />
-
-            <Footer stores={stores} />
+            {loggedIn ? <CookieStandAdmin stores={stores} updateStores={updateStores}/> : <LoginForm updateLoggedIn={updateLoggedIn}/>}
 
         </body>
 

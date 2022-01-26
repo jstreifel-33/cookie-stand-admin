@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { useState } from 'react'
 import { useAuth } from '../contexts/auth'
-import CookieStandAdmin from './components/CookieStandAdmin'
-import LoginForm from './components/LoginForm'
+import CookieStandAdmin from '../components/CookieStandAdmin'
+import LoginForm from '../components/LoginForm'
 
 //Comment to try to trigger Vercel
 

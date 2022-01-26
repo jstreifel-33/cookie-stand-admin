@@ -1,5 +1,5 @@
-import { useAuth } from "../../contexts/auth"
-import useResource from "../../hooks/useResources"
+import { useAuth } from "../contexts/auth"
+import useResource from "../hooks/useResources"
 
 export default function CreateForm(props) {
 

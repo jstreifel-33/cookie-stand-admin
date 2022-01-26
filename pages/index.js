@@ -4,6 +4,8 @@ import { useAuth } from '../contexts/auth'
 import CookieStandAdmin from './components/CookieStandAdmin'
 import LoginForm from './components/LoginForm'
 
+//Comment to try to trigger Vercel
+
 export default function Home() {
 
     const [stores, updateStores] = useState([])

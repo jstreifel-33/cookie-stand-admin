@@ -1,4 +1,4 @@
-import { hours } from '../data'
+import { hours } from '../../public/data'
 import { useAuth } from '../../contexts/auth'
 
 export default function ReportTable(props) {

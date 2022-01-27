@@ -2,6 +2,13 @@
 
 Front-end interface for cookie stand administrative tools. An exploration in using Next.js and Tailwind CSS.
 
+## Deployment
+
+App is deployed to Vercel, click [here](https://cookie-stand-admin-ow2wlabep-jstreifel-33.vercel.app/) to check out it out.
+
+Username: admin
+Password: admin
+
 ## Next.js Boilerplate for Reference
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
